@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Inscription - Fimmo</title>
+
+	<link rel="icon" href="../../../assets/img/logo.jpg">
+	<meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Inscrivez-vous maintenant gratuitement sur Fimmo">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<link href="../../../assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+</head>
+<body>
+	<main class="main" id="top">
+		<div class="container-fluid px-0" data-layout="container">
+			<div class="container">
+				<div class="row flex-center min-vh-100 py-5">
+					<div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3">
+						<a class="d-flex flex-center text-decoration-none mb-4" href="./index.html">
+							<div class="d-flex align-items-center fw-bolder fs-5 d-inline-block">
+								<img src="../../../assets/img/logo.jpg" alt="Fimmo" width="58" />
+							</div>
+						</a>
+						<div class="text-center mb-7">
+							<h3>
+								Fimmo
+							</h3>
+							<p class="text-700">
+								Inscrivez-vous en créant votre compte en tant qu'agence immobilière!
+							</p>
+						</div>
+						<form>
+							<div class="mb-3 text-start">
+								<label class="form-label" for="name">
+									Nom de l'agence
+								</label>
+								<input class="form-control" type="name" placeholder="Immo example" />
+							</div>
+							<div class="mb-3 text-start">
+								<label class="form-label" for="email">
+									Adresse email
+								</label>
+								<input class="form-control" type="email" placeholder="immo@example.com" />
+							</div>
+							<div class="mb-3 text-start">
+								<label class="form-label" for="tel">
+									Numéro de téléphone
+								</label>
+								<input class="form-control" type="tel" placeholder="+..........." />
+							</div>
+							<div class="mb-3 text-start">
+								<label class="form-label" for="tel">
+									Géolocalisation
+								</label>
+                                <button class="btn btn-phoenix-primary me-1 mb-1" style="display: block;" onclick="getLocation()" type="button">
+                                    Nous-géolocaliser ici
+                                </button>
+                                <div id="demo"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="password">
+                                            Longitude
+                                        </label>
+                                        <input class="form-control" type="text" id="long"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="password">
+                                            Latitude
+                                        </label>
+                                        <input class="form-control" type="text" id="lat"/>
+                                    </div>
+                                </div>
+							</div>
+							<div class="row g-3 mb-3">
+								<div class="col-md-6">
+									<label class="form-label" for="password">
+										Mot de passe
+									</label>
+									<input class="form-control form-icon-input" type="password" placeholder="Password" />
+								</div>
+								<div class="col-md-6">
+									<label class="form-label" for="confirm_password">
+										Confirmer le mot de passe
+									</label>
+									<input class="form-control form-icon-input" type="password" placeholder="Confirm Password" />
+								</div>
+							</div>
+							<div class="form-check mb-3">
+								<input class="form-check-input" id="termsService" type="checkbox" />
+								<label class="form-label" for="termsService">
+									J'accepte les <a>conditions d'utilisation </a> et la <a>politique de confidentialité</a>
+								</label>
+							</div>
+							<a href="./index.html" class="btn btn-primary w-100 mb-3">
+								S'inscrire
+                            </a>
+							<div class="text-center">
+								<a class="fs--1 fw-bold" href="./login.html">
+									Se connecter ici
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<script src="../../../assets/js/popper.min.js"></script>
+	<script src="../../../assets/js/bootstrap.min.js"></script>
+	<script src="../../../assets/js/anchor.min.js"></script>
+	<script src="../../../assets/js/is.min.js"></script>
+	<script src="../../../assets/js/all.min.js"></script>
+	<script src="../../../assets/js/lodash.min.js"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+	<script src="../../../assets/js/list.min.js"></script>
+	<script src="../../../assets/js/feather.min.js"></script>
+	<script src="../../../assets/js/dayjs.min.js"></script>
+	<script src="../../../assets/js/phoenix.js"></script>
+    <script>
+        var x = document.getElementById("demo"), longitude = document.getElementById('long'), latitude = document.getElementById('lat');
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "La géolocalisation n'est pas supportée par votre navigateur. Remplissez donc vos coordonnées: longitude et latitude";
+            }
+        }
+
+        function showPosition(position) {
+            longitude.value = position.coords.longitude
+            latitude.value = position.coords.latitude
+        }
+    </script>
+</body>
+</html>
